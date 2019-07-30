@@ -1,0 +1,89 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<!--
+   Editorial by HTML5 UP
+   html5up.net | @ajlkn
+   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="ko">
+   <head>
+      <title>Editorial by HTML5 UP</title>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, height=device-height, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="{% static 'blog/assets/css/main.css' %}" />
+   <title>Editorial by HTML5 UP</title>
+   <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 2%;
+            font-size: 15px;
+            font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;
+        }
+
+        h2 {
+            font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+      <!-- Wrapper -->
+         <div id="wrapper">
+
+            <!-- Main -->
+               <div id="main">
+                  <div class="inner">
+
+                     <!-- Header -->
+                        <header id="header">
+                           <a href="{% url 'home' %}" class="logo"><strong>Please tem</strong></a>
+                           <ul class="icons">
+                              <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                              <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                              <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+                              <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                              <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+                                        {% if user.is_authenticated %}
+                                        <li>
+                                            <a href="{% url 'logout' %}">logout</a>
+                                        </li>
+                                        <li>
+                                            <p style="color: black">{{user.username}}님 로그인 되었습니다.</p>
+                                        </li>
+                                        {% else %}
+                                        <li>
+                                            <a href="{% url 'userlogin' %}">login</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'signup' %}">signup</a>
+                                        </li>
+                                        {% endif %}
+                           </ul>
+                                </header>
+<br>
+<div class="container">
+        <header class="major">
+    <h2><b>여행자 이름 : </b> {{ sell.name }}</h2>
+    </header>
+    <img src="https://image.flaticon.com/icons/svg/1250/1250646.svg" style="width: 30px; height: 30px;"/><span><b>  핸드폰 번호 : </b> {{ sell.phone_number }}</span>
+    <br>
+    <br>
+    <img src="https://image.flaticon.com/icons/svg/1570/1570887.svg" style="width: 30px; height: 30px;"/><span><b>  계좌 번호 : </b> {{ sell.account_number }}</span>
+    <br>
+    <br>
+    <img src="https://image.flaticon.com/icons/svg/149/149263.svg" style="width: 30px; height: 30px;"/><span><b>   여행 국가 : </b>{{sell.country}}</span>
+    <br>
+    <br>
+    <img src="https://www.flaticon.com/premium-icon/icons/svg/640/640224.svg" style="width: 30px; height: 30px;"/><span><b>    출국 날짜 : </b>{{sell.start_date}} </span>
+    <br>
+    <br>
+    <img src="https://www.flaticon.com/premium-icon/icons/svg/640/640224.svg" style="width: 30px; height: 30px;"/><span><b>    귀국 날짜 : </b>{{sell.end_date}} </span>
+    <br>
+    <br>
+    <img src="https://image.flaticon.com/icons/svg/66/66740.svg" style="width: 30px; height: 30px;"/><span><b>    비고 : </b>{{sell.body}} </span>
+    <br>
+    <br>
+    <a href="{% url 'sell' %}">돌아가기</a>
+</div>

@@ -1,0 +1,93 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Elements - Editorial by HTML5 UP</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="{% static 'blog/assets/css/main.css' %}">
+        <style>
+            body {
+                margin-top: 4%;
+                margin-left: 40%; 
+                margin-right: 40%;
+
+                width: 50%;
+                display: block;
+            }
+            #button {
+                margin-left: 15%;
+                margin-right: 15%;
+            }
+            h1 {
+                margin: 5%;
+                margin-left: 7%;
+            }
+            .container {
+                margin-left : 7%;
+            }
+ 
+        </style>
+    </head>
+
+    
+    <body class="is-preload">
+    <div class="">
+        <h1>Sign up!</h1>
+        <form method = "POST" action = "{%url 'signup' %}"> <!-- 위에서 작성한 signup url로 아래 사용자 input들을 post방식으로 넘겨줍니다.-->
+            <div class="container">
+            <div class="row gtr-uniform" style="width:300px;">
+                <div class="row">
+                    <div class="col-12 col-12-xsmall">
+                    {% csrf_token %} <!--사이트간 위조 방지 토큰을 넣어주고-->
+                    Username :  
+                    <br>
+                        <input type="text" name="username" id="username" value="" placeholder="Username" /> <!-- username input입니다 -->
+                    </div> 
+                </div>
+                    <br>
+                <div class="row">
+                    <div class="col-12 col-12-xsmall">
+                    Password : 
+                    <br>
+                        <input type="password" name="password1" id="password1" value="" placeholder="Password" /> <!-- password를 한번 받구요 -->
+                    </div>
+                </div>
+                    <br>
+                    <div class="col-8 col-12-xsmall">
+                    Confirm Password :
+                    <br>
+                        <input type="password" name="password2" id="password2" value="" placeholder="Confirm Password" /> <!-- 확인을 위해 password를 한번 더 받습니다 -->
+                    </div>
+                    <br>
+                <div class="row">
+                    <div class="col-12 col-12-xsmall">
+                    Phone Number :
+                    <br>
+                        <input type="text" name="phonenumber" id="phonenumber" value="" placeholder="Phone Number" />   
+                    </div>
+                </div>
+                    <br>
+                    <br>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="select">
+                        Sex :
+                        <br>
+                            <input type="radio" id="man" name="man"> 
+                            <label for="man">Man</label>
+                            <input type="radio" id="woman" name="woman">
+                            <label for="woman">Woman</label>
+                        </div>
+                    </div>
+                </div>
+                    <br>
+                    <div class="col-10 col-12-xsmall" id="button">
+                    <input class="primary" type="submit" value="Sign up!"> <!-- submit버튼이에요! 이걸 누르면 우리가 위에서 action으로 지정한 signup url로 이 데이터를 보낼겁니다! -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

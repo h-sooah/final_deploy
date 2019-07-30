@@ -1,0 +1,108 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<!--
+   Editorial by HTML5 UP
+   html5up.net | @ajlkn
+   Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="ko">
+   <head>
+      <title>Editorial by HTML5 UP</title>
+      <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, height=device-height, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="{% static 'blog/assets/css/main.css' %}" />
+    <style>
+
+        body {
+          height: 100%;
+          width: 100%;
+          font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;
+        }
+
+        h4 {
+          font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;
+        }
+        .button {
+          margin-right: 40%;
+        }
+
+        .left {
+            width: 50%;
+            float: left;
+            margin-top: 5.7%;
+            padding-left: 16%;
+            padding-right: 2%;
+        }
+        .right {
+            width:35%;
+            float: right;
+            margin-right: 13%;
+            margin-top: 2%;
+        }
+        #buy_name, #request_country, #end_date {
+          width: 13em;
+          height: 2em;
+        }
+
+        #button {
+          margin-left : 46%;
+        }
+
+        .button {
+          margin-left : 46%;
+        }
+        </style>
+  </head>
+
+<body>
+<div class="container">
+  <div class="left">
+   <form action="{% url 'buying' %}">
+        <h4>이름 : </h4>
+          <input type="text" name="buy_name" id="buy_name" value="" placeholder="Name" style="font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;"/>
+     
+     <br>
+        <h4>희망 수령 날짜 : </h4>
+          <input type="date" name="end_date" id="end_date" value="" placeholder="Date" style="border-radius: 7px;font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;"/>
+     <br>
+     <br>
+      <h4>요청국가: </h4>
+      <input type="text" name="request_country" placeholder="Country" style="font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;">
+      <br>
+       <h4>내용 : </h4>
+        <textarea name="body" id="body" placeholder="Content" cols = "10" rows="4" style="font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;"></textarea>
+      
+     <br>
+    
+
+   </div>
+  <div class="right">
+     <br>
+      <!-- col 겹침-->
+
+      <br>
+        <h4>가격 : </h4>
+          <input type="number" name="price" id="price" value="" placeholder="Price" style="border-radius: 7px; font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;"/>
+     <br>
+      <br>
+        <h4>수량 : </h4>
+          <input type="number" name="amount" id="amout" value="" placeholder="Amount" style="border-radius: 7px; font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;" />
+     <br>
+     <br>
+      
+        <h4>사이즈 : </h4>
+          <input type="text" name="size" id="size" value="" placeholder="Size" style="font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;" />
+      
+      <br>
+       <!-- col 겹침-->
+        <h4>판매자에게 하고 싶은 말 : </h4>
+         <textarea name="request_text" id="request_text" placeholder="Enter your message" cols="10" rows="4" style="font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;"></textarea>
+       
+      <br>
+      <br>
+    </div>
+    <input class="button" id="button" type="submit" value="등록하기" style="font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal;">
+  </form>
+  
+
+</body>
