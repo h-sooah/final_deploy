@@ -14,7 +14,7 @@ cryptography==2.6.1
 cssselect==1.0.3
 defusedxml==0.6.0
 dj-database-url==0.5.0
-Django==2.1.7
+Django==2.2.13
 django-allauth==0.39.1
 django-rest-knox==4.0.1
 djangorestframework==3.9.4
